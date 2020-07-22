@@ -1,4 +1,4 @@
-package com.newminds.pubsub.producer;
+package com.newminds.pubsub.rabbitmq.producer;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.SpringApplication;

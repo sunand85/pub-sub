@@ -1,7 +1,6 @@
-package com.newminds.pubsub.consumer.two;
+package com.newminds.pubsub.rabbitmq.consumer.one;
 
 import org.springframework.amqp.core.*;
-import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.boot.SpringApplication;
@@ -17,16 +16,15 @@ import static org.springframework.amqp.core.BindingBuilder.bind;
  * Created by Sunand on 22/07/2020.
  **/
 @SpringBootApplication
-@EnableRabbit
-public class ConsumerTwoAppStarter {
+public class ConsumerOneAppStarter {
 
   public static void main(String[] args) {
-    SpringApplication.run(ConsumerTwoAppStarter.class, args);
+    SpringApplication.run(ConsumerOneAppStarter.class, args);
   }
 }
 
 @Configuration
-class ConsumerTwoQueueConfig {
+class ConsumerOneQueueConfig {
 
   @Bean
   public Exchange fanoutExchange() {
@@ -34,15 +32,15 @@ class ConsumerTwoQueueConfig {
   }
 
   @Bean
-  public Queue consumer2Queue() {
+  public Queue consumer1Queue() {
     return QueueBuilder
-            .durable("consumer_TWO_Q")
+            .durable("consumer_ONE_Q")
             .build();
   }
 
   @Bean
   public Binding declareBinding() {
-    return bind(consumer2Queue())
+    return bind(consumer1Queue())
             .to(fanoutExchange())
             .with("fanout.routing.key") //Routing Key will be ignored for Fanout Exchanges
             .noargs();
@@ -50,8 +48,8 @@ class ConsumerTwoQueueConfig {
 }
 
 @Service
-@RabbitListener(queues = "consumer_TWO_Q")
-class ConsumerTwoMessageListener {
+@RabbitListener(queues = "consumer_ONE_Q")
+class ConsumerOneMessageListener {
 
   @RabbitHandler
   public void onMessage(@Payload String message) {
