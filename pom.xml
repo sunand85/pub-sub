@@ -12,6 +12,7 @@
         <module>kafka</module>
         <module>reactor</module>
         <module>rxjava</module>
+        <module>redis</module>
     </modules>
 
     <packaging>pom</packaging>
