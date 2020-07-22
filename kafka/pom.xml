@@ -12,5 +12,12 @@
     <groupId>com.newminds.pubsub</groupId>
     <artifactId>kafka</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>2.3.3.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 </project>

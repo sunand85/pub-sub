@@ -28,9 +28,12 @@ class Producer {
   }
 
   @EventListener(ApplicationReadyEvent.class)
-  public void onStartup() {
+  public void onStartup() throws InterruptedException {
     rabbitTemplate.setExchange("fanout.exchange");
-    rabbitTemplate.convertAndSend("Catch Me");
+    for(int i = 0; i < 100; i++) {
+      rabbitTemplate.convertAndSend("Catch Me - " + i);
+      Thread.sleep(2_000);
+    }
   }
 }
 
