@@ -14,6 +14,7 @@
         <module>rxjava</module>
         <module>redis</module>
         <module>guava-eventbus</module>
+        <module>custom</module>
     </modules>
 
     <packaging>pom</packaging>
