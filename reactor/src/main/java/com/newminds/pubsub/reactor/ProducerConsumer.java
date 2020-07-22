@@ -27,7 +27,7 @@ public class ProducerConsumer {
                             .iterate(0, i -> i + 1) //Infinite Stream
                             .map(integer -> {
                               try {
-                                Thread.sleep(2_000); //Adding Delay
+                                Thread.sleep(1_000); //Adding Delay
                               } catch (InterruptedException e) {
                                 e.printStackTrace();
                               }

@@ -15,6 +15,8 @@ public class Broker {
 
   private static final Broker BROKER = new Broker();
 
+  private Broker() {}
+
   public static Broker getInstance() {
     if(BROKER != null) return BROKER;
     else return new Broker();

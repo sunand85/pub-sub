@@ -19,7 +19,6 @@ public class ConnectableFluxProducerConsumer {
     }).start();
 
     new Thread(() -> {
-      System.out.println("I am in");
       publish.autoConnect().subscribe(integer -> System.out.println("Two - " + integer));
     }).start();
 

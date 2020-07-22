@@ -12,5 +12,12 @@
     <groupId>com.newminds.pubsub</groupId>
     <artifactId>rxjava</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.reactivex.rxjava3</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>3.0.4</version>
+        </dependency>
+    </dependencies>
 
 </project>
