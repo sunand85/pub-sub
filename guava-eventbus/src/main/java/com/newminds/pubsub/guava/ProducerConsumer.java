@@ -22,7 +22,7 @@ public class ProducerConsumer {
     Stream.iterate(0, integer -> integer + 1).map(operand -> {
       eventBus.post("Catch Me - " + operand);
       try {
-        Thread.sleep(2_000);
+        Thread.sleep(1_000);
       } catch (InterruptedException e) {
         e.printStackTrace();
       }

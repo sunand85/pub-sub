@@ -32,7 +32,7 @@ class Producer {
     rabbitTemplate.setExchange("fanout.exchange");
     for(int i = 0; i < 100; i++) {
       rabbitTemplate.convertAndSend("Catch Me - " + i);
-      Thread.sleep(2_000);
+      Thread.sleep(1_000);
     }
   }
 }

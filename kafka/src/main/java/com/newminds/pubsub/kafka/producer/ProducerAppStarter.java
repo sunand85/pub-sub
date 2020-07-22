@@ -61,7 +61,7 @@ class Producer {
   public void onStartup() throws InterruptedException {
     for(int i = 0; i < 100; i++) {
       kafkaTemplate.send("pubsub", "Catch Me - " + i);
-      Thread.sleep(2_000);
+      Thread.sleep(1_000);
     }
   }
 }

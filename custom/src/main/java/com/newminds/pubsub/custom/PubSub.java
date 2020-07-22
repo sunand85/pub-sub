@@ -20,7 +20,7 @@ public class PubSub {
     Stream.iterate(0, i -> i + 1)
             .forEach(integer -> {
               try {
-                Thread.sleep(2_000);
+                Thread.sleep(1_000);
               } catch (InterruptedException e) {
                 e.printStackTrace();
               }
