@@ -13,6 +13,7 @@
         <module>reactor</module>
         <module>rxjava</module>
         <module>redis</module>
+        <module>guava-eventbus</module>
     </modules>
 
     <packaging>pom</packaging>
